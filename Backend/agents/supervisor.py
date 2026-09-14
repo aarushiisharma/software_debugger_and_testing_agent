@@ -1,11 +1,10 @@
-from langchain_groq import ChatGroq
+from langchain_ollama import ChatOllama
 
-from Backend.config.settings import MODEL_NAME, GROQ_API_KEY
+from Backend.config.settings import MODEL_NAME
 
-llm=ChatGroq(
+llm=ChatOllama(
     model=MODEL_NAME,
     temperature=0,
-    api_key= GROQ_API_KEY
 )
 
 def supervisor_agent(state):

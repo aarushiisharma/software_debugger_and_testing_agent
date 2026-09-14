@@ -1,6 +1,6 @@
-from langchain_groq import ChatGroq
+from langchain_ollama import ChatOllama
 
-from Backend.config.settings import MODEL_NAME, GEMINI_API_KEY
+from Backend.config.settings import MODEL_NAME
 
 from Backend.tools.agent_tools import(
     read_repository_file,
@@ -10,10 +10,9 @@ from Backend.tools.agent_tools import(
 
 from Backend.agents.agent_runner import run_tool_calling_agent
 
-llm=ChatGroq(
+llm=ChatOllama(
     model=MODEL_NAME,
     temperature=0,
-    api_key= GEMINI_API_KEY
 )
 
 debugger_tools=[

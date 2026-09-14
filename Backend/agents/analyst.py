@@ -27,9 +27,9 @@
 
 # That is a real tool-using agent.
 
-from langchain_groq import ChatGroq
+from langchain_ollama import ChatOllama
 
-from Backend.config.settings import MODEL_NAME , GROQ_API_KEY
+from Backend.config.settings import MODEL_NAME
 
 from Backend.tools.agent_tools import(
     list_repository_files,
@@ -41,10 +41,9 @@ from Backend.tools.agent_tools import(
 from Backend.agents.agent_runner import run_tool_calling_agent
 
 # Create the language model
-llm=ChatGroq(
+llm=ChatOllama(
     model=MODEL_NAME,
     temperature=0,
-    api_key= GROQ_API_KEY,
 )
 
 # Tools available to the Code Analyst
