@@ -6,7 +6,7 @@ load_dotenv()
 
 MODEL_NAME = os.getenv(
     "MODEL_NAME",
-    "llama3"
+    "llama3:latest"
 )
 
 MAX_DEBUG_ITERATIONS = int(
